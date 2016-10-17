@@ -1,0 +1,18 @@
+CREATE TABLE Obywatel
+(
+PESEL varchar(11),
+Imie varchar(20),
+Nazwisko varchar(30),
+NumerDowoduTozsamosci varchar(9),
+ImieOjca varchar(20)
+);
+
+INSERT INTO Obywatel (PESEL, Imie, Nazwisko, NumerDowoduTozsamosci, ImieOjca) VALUES ();
+
+CREATE TABLE Miejsce
+(
+NazwaDzielnicy varchar(50),
+Ulica varchar(50)
+);
+
+INSERT INTO Miejsce(NazwaDzielnicy, Ulica) VALUES ();
