@@ -4,12 +4,29 @@ from faker import Factory
 
 fake = Factory.create('pl_PL')
 output = open('insertSQLMiejsce.txt', 'w', encoding="utf8")
-with open('streetAndDistrict', 'r+', encoding='utf8') as input:
+with open('streetAndDistrict — corect version edited in Netepad++.txt', 'r+', encoding='utf8') as input:
     for record in input.readlines():
-        firstName = fake.first_name()
-        lastName = fake.last_name()
-        output.write('INSERT INTO Miejsce(NazwaDzielnicy, Ulica) VALUES (' + firstName + ', ' + lastName + ');\n')
+        streetName = ""
+        districtName = ""
+        districtNameRevesed = ""
+        kolumns = record.split(' ')
+
+        while(kolumns[-1].isupper()):
+            districtNameWithSlashN = kolumns[-1]
+            districtNameRevesed = districtNameRevesed + ' ' + districtNameWithSlashN.replace('\n', '')
+            del kolumns[-1]
+        districtNameRevesedSplit = districtNameRevesed.split(' ')
+        districtNameList = reversed(districtNameRevesedSplit)
+
+        for word in districtNameList:
+            districtName = districtName + ' ' + word
+
+        for word in kolumns:
+            streetName = streetName + ' ' + word
 
 
-input().close()
+        output.write('INSERT INTO Miejsce(NazwaDzielnicy, Ulica) VALUES (' + districtName + ', ' + streetName + ');\n')
+
+
+input.close()
 output.close()
