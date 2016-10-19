@@ -1,18 +1,44 @@
 CREATE TABLE Obywatel
 (
-PESEL varchar(11),
-Imie varchar(20),
-Nazwisko varchar(30),
-NumerDowoduTozsamosci varchar(9),
-ImieOjca varchar(20)
+PESEL CHAR(11) PRIMARY KEY,
+Imie VARCHAR(20),
+Nazwisko VARCHAR(30),
+NumerDowoduTozsamosci VARCHAR(9),
+ImieOjca VARCHAR(20)
 );
 
 INSERT INTO Obywatel (PESEL, Imie, Nazwisko, NumerDowoduTozsamosci, ImieOjca) VALUES ();
 
 CREATE TABLE Miejsce
 (
-NazwaDzielnicy varchar(50),
-Ulica varchar(50)
+NazwaDzielnicy VARCHAR(50),
+Ulica VARCHAR(50),
+PRIMARY KEY(NazwaDzielnicy, Ulica)
 );
 
 INSERT INTO Miejsce(NazwaDzielnicy, Ulica) VALUES ();
+
+CREATE TABLE Funkcjonariusz
+(
+NumerSluzbowy INT PRIMARY KEY,
+Imie VARCHAR(20),
+Nazwisko VARCHAR(30)
+);
+
+INSERT INTO Funkcjonariusz (PESEL, Imie, Nazwisko) VALUES ();
+
+CREATE TABLE Mandat
+(
+NumerMandatu INT PRIMARY KEY,
+KwotaMandatu INT,
+TypPlatnosci
+Data DATE,
+Czas
+
+FOREIGN KEY (PESELKaranego) REFERENCES Obywatel(PESEL),
+FOREIGN KEY (NumerSluzbowyFunkcjunariusza) REFERENCES Funkcjonariusz(NumerSluzbowy),
+FOREIGN KEY (NazwaDzielnicy, Ulica) Miejsce(NazwaDzielnicy, Ulica),
+FOREIGN KEY (Wykroczenie) Wykroczenie(NumerWykroczenia)
+);
+
+INSERT INTO Mandat (NumerMandatu, KwotaMandatu, TypPlatnosci,) VALUES ();
