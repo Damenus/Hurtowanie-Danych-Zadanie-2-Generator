@@ -7,10 +7,12 @@ import insertSQLObywatel
 import insertSQLMiejsce
 import insertSQLTypyWykroczen
 import get_badge_numbers
+import sys
 
-
-NUMBER_OF_RECORDS = 1000
-
+if(len(sys.argv)>1):
+    NUMBER_OF_RECORDS = sys.argv[1]
+else:
+    NUMBER_OF_RECORDS = 1000
 
 fake = Factory.create('pl_PL')
 listaDate = []
