@@ -63,6 +63,8 @@ output.close()
 def newMonth(numberOfRecordInNewMounth,nameFileOficer):
     listaDateNewMonth = []
 
+    insertSQLTypyWykroczen.changeInLaw(listOfWykroczenia,'2016-06-01')
+
     for record in range(0, numberOfRecordInNewMounth):
         newDate = fake.date_time_between_dates(datetime.date(2016, 6, 1), datetime.date(2016, 7, 1), tzinfo=None)
         listaDateNewMonth.append(newDate)

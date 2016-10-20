@@ -38,12 +38,12 @@ def generateFirstDay():
 
 def changeInLaw(listOfID, date):
     changingLaw = random.choice(listOfID)
-    newAmount = random.randint(50,1000,50)
+    newAmount = random.randrange(50,1000,50)
 
     output = open('insertSQLTypywykroczenTIME2.txt', 'a', encoding="utf8")
-    output.write('UPDATE Wykroczenia SET DataZakonczeniaObowiazywania=' + date + ' WHERE ID=' + changingLaw + ';')
+    output.write('UPDATE Wykroczenia SET DataZakonczeniaObowiazywania=' + date + ' WHERE ID=' + str(changingLaw) + ';')
     output.write( 'INSERT INTO Wykroczenie (NumerWykroczenia, KwotaMandatu, DataRozpoczeciaObowiazywania, DataZakonczeniaObowiazywania) VALUES (' +
-                  changingLaw + ', ' + newAmount + ', ' + date + ', ' + 'NULL' + ');\n')
+                  str(changingLaw) + ', ' + str(newAmount) + ', ' + date + ', ' + 'NULL' + ');\n')
     output.close()
 
     return listOfID

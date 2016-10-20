@@ -1,0 +1,1 @@
+UPDATE Wykroczenia SET DataZakonczeniaObowiazywania=2016-06-01 WHERE ID=98;UPDATE Wykroczenia SET DataZakonczeniaObowiazywania=2016-06-01 WHERE ID=129;INSERT INTO Wykroczenie (NumerWykroczenia, KwotaMandatu, DataRozpoczeciaObowiazywania, DataZakonczeniaObowiazywania) VALUES (129, 600, 2016-06-01, NULL);
