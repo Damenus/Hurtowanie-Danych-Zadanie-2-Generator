@@ -7,7 +7,7 @@ def generateFirst100Man():
 
     #INSERT INTO Obywatel (PESEL, Imie, Nazwisko, NumerDowoduTozsamosci, ImieOjca) VALUES ();
 
-    output = open('insertSQLObywatel.txt', 'w', encoding="utf8")
+    output = open('insertSQLObywatel.sql', 'w', encoding="utf8")
     fake = Factory.create('pl_PL')
     listOfPesel = []
 
@@ -25,7 +25,7 @@ def generateFirst100Man():
     return listOfPesel
 
 def generateObywatel():
-    output = open('insertSQLObywatel.txt', 'a', encoding="utf8")
+    output = open('insertSQLObywatel.sql', 'a', encoding="utf8")
     fake = Factory.create('pl_PL')
 
     pesel = GeneratorPesel.pesel()

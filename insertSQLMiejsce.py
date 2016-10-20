@@ -5,7 +5,7 @@ from faker import Factory
 def generateMiejsca():
     districtAndStreetNameList = []
     fake = Factory.create('pl_PL')
-    output = open('insertSQLMiejsce.txt', 'w', encoding="utf8")
+    output = open('insertSQLMiejsce.sql', 'w', encoding="utf8")
     with open('streetAndDistrict — corect version edited in Netepad++.txt', 'r+', encoding='utf8') as input:
         for record in input.readlines():
             streetName = ""

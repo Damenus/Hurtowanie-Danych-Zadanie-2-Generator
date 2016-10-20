@@ -25,7 +25,7 @@ Imie VARCHAR(20) NOT NULL,
 Nazwisko VARCHAR(30) NOT NULL
 );
 
-INSERT INTO Funkcjonariusz (PESEL, Imie, Nazwisko) VALUES ();
+INSERT INTO Funkcjonariusz (NumerSluzbowy, Imie, Nazwisko) VALUES ();
 
 CREATE TABLE TypWykroczenia
 (

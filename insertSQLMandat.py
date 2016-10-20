@@ -8,6 +8,7 @@ import insertSQLMiejsce
 import insertSQLTypyWykroczen
 import get_badge_numbers
 
+
 NUMBER_OF_RECORDS = 1000
 
 
@@ -19,6 +20,8 @@ for record in range(0,NUMBER_OF_RECORDS):
     listaDate.append(newDate)
 listaDate.sort()
 
+insertSQLTypyWykroczen.generateOficers('police_officers_t1')
+
 listOfPesel = insertSQLObywatel.generateFirst100Man()
 
 listOfPlace = insertSQLMiejsce.generateMiejsca()
@@ -27,8 +30,9 @@ listOfWykroczenia = insertSQLTypyWykroczen.generateFirstDay()
 
 listOfPaymantType = ['kredytowany','gotówkowy','zaoczny']
 
-output = open('insertSQLMandat.txt', 'w', encoding="utf8")
-outputBULK = open('insertSQLMandatBULK.txt', 'w', encoding="utf8")
+
+output = open('insertSQLMandat.sql', 'w', encoding="utf8")
+outputBULK = open('insertSQLMandatBULK.sql', 'w', encoding="utf8")
 
 
 for record in range(0,NUMBER_OF_RECORDS):
@@ -71,8 +75,8 @@ def newMonth(numberOfRecordInNewMounth,nameFileOficer):
     listaDateNewMonth.sort()
 
 
-    output2 = open('insertSQLMandat2.txt', 'a', encoding="utf8")
-    output2BULK = open('insertSQLMandat2BULK.txt', 'a', encoding="utf8")
+    output2 = open('insertSQLMandat2.sql', 'a', encoding="utf8")
+    output2BULK = open('insertSQLMandat2BULK.sql', 'a', encoding="utf8")
 
     for record in range(0,numberOfRecordInNewMounth):
         if (random.randrange(0, 100) < 30):
